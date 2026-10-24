@@ -50,11 +50,11 @@ public class MecanumDrive extends LinearOpMode {
             backLeft.setPower(bl / max * speed);
             backRight.setPower(br / max * speed);
  
-            if (gamepad1.left_bumper && !lastR1) {
+            if (gamepad1.left_bumper && !lastL1) {
                 speed = Range.clip(speed - 0.1, 0.2, 1.0);
             }
- 
-            if (gamepad1.right_bumper && !lastL1) {
+
+            if (gamepad1.right_bumper && !lastR1) {
                 speed = Range.clip(speed + 0.1, 0.2, 1.0);
             }
  

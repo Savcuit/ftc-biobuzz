@@ -52,7 +52,6 @@ configure the device names above in the Driver Station under *Configure Robot*.
 
 ## Notes
 
-- Edge detection for the bumpers compares `left_bumper` against `!lastR1` (and vice versa) in
-  the original version. It works, but the pairs are crossed; using `!lastL1` and `!lastR1`
-  respectively makes each change fire exactly once per press.
+- Bumper edge detection compares each bumper against its own previous state (`!lastL1` for the
+  left bumper, `!lastR1` for the right), so one press changes speed exactly once.
 - Speed is clamped with `Range.clip`, so holding a bumper will not push it past 20% or 100%.
